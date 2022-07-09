@@ -13,7 +13,6 @@
     <div class="cards">
         {% for m in mobiles %}
         <div class="card">
-            <!-- <img src="{% static 'images/logo.png' %}" alt=""> -->
             <img src="{{m.product_image.url}}" alt="">
             <h3>{{m.title}}</h3>
             <p><b>{{m.selling_price}}</b></p>
@@ -27,7 +26,7 @@
     <div class="cards">
         {% for bw in bottomwear %}
         <div class="card">
-            <img src="{% static 'images/logo.png' %}" alt="">
+            <img src="{{bw.product_image.url}}" alt="">
             <h3>{{bw.title}}</h3>
             <p><b>{{bw.selling_price}}</b></p>
             <a href="{% url 'product-detail' bw.id %}"><p class="btn-btn">Details</p></a>
