@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.background-image nav {
+    display: flex;
+    justify-content:space-evenly;
+    padding-top:10px ;
+    padding-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.background-image nav img {
+    width: 80px;
+    height: 60px;
+    margin-right: 700px;
+}
+.background-image nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.background-image nav ul li {
+    list-style: none;
+    padding-left:10px;
+    padding-right: 10px;
+}
+.background-image nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    background-color: orange;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#cars {
+    background:transparent;
+    border-style: none;
+    font-weight: 500;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#cars option {
+   font-size: large;
+   background-color: rgb(8, 8, 83);
+   color: white;
+}
+
+.text {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.text h1 {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:50px;
+}
+.text h1 span {
+    color: orange;
+    font-size:60px;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: rgb(8, 8, 83);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.progress {
+    /* background-color: green; */
+    margin-top: 5px;
+    display: flex;
+    height: 20px;
+    width: 200px;
+    margin-left: 270px;
+    border-radius: 5px;
+    border: 1px solid blueviolet;
+}
+.Accepted {
+    background-color: blueviolet;
+    width: 40px;
+    height: 20px;
+    margin-left: 40px;
+}
+.Packed {
+    background-color: blueviolet;
+    width: 40px;
+    height: 20px;
+    margin-left: 80px;
+}
+.otw {
+    background-color: blueviolet;
+    width: 40px;
+    height: 20px;
+    margin-left: 120px;
+}
+.Delivered {
+    background-color: green;
+    width: 200px;
+    height: 20px;
+}
+.Cancel {
+    background-color:red;
+    width: 200px;
+    height: 20px;
+}
+

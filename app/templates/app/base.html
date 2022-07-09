@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="stylesheet" href="{% static 'css/customerregistration.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
+  <link rel="stylesheet" href="{% static 'css/productdetail.css' %}">
+  <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'css/address.css' %}">
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">  
+
+  <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+  <div class="background-image">
+    <nav>
+        <a href="{% url 'home' %}"><img src="{%static 'images/logo.png'%}" alt=""></a>
+        {% if request.user.is_authenticated %}
+        <ul>
+          <li>
+            <select name="cars" id="cars">
+              <option>Categories</option>
+              <option ><a href="">Mobiles</a></option>
+              <hr>
+              <option value="mercedes"><a href="">Laptop</a></option>
+              <option value="audi"><a href="">Top wear</a></option>
+              <option value="audi"><a href="">Bottom wear</a></option>
+            </select>
+        </li>
+        <li>
+          <h4>Welcome,</h4> <select name="cars" id="cars" onchange="location=this.value">
+            <option value="{% url 'profile' %}" >{{request.user}}</option>
+            <option value="{% url 'profile' %}" >Profile</option>
+            <option value="{% url 'orders' %}" >Your Orders</option>
+            <option value="{% url 'change-password' %}" >Change password</option>
+            <option value="{% url 'logout' %}" >Logout</option>
+          </select>
+      </li>
+      <li><a href="{% url 'cart' %}">Cart <i class="bi bi-cart3"></i> ( <span class="cartNumber">0</span> )</a></li>
+        </ul>
+       {% else %}
+        <ul>
+            <li>
+                <select name="cars" id="cars" onchange="location=this.value">
+                  <option>Categories</option>
+                  <option value="cd"><a href="">Mobiles</a></option>
+                  <option value="mercedes"><a href="">Laptop</a></option>
+                  <option value="audi"><a href="">Top wear</a></option>
+                  <option value="audi"><a href="">Bottom wear</a></option>
+                </select>
+            </li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a href="{% url 'customerRegistration' %}">Sign up</a></li>
+            <li><a href="{% url 'cart' %}">Cart <i class="bi bi-cart3"></i> ( <span>0</span> )</a></li>
+        </ul>
+        {% endif %}
+       
+    </nav>
+</div>
+{% block body %}{% endblock body %}
+{% block content %}{% endblock content %}
+<footer class="footer">
+  <small>Copyright &copy; 2022 || Designed By x-y-z  </small>
+</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="{% static 'js/myscript.js' %}"></script>
+</body>
+</html>

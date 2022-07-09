@@ -1,0 +1,28 @@
+{% extends 'app/base.html' %}
+{% block title %}Login{% endblock title %}
+{% block body %}
+
+<div class="container" >
+    <form action="" class="login" method="post" novalidate class="shadow p-5">
+        <div class="cross">
+            <h1><i class="bi bi-person-circle"></i></h1>
+            <a href="{% url 'home' %}"><i class="bi bi-x-lg position"></i></a>
+        </div>
+        {% csrf_token %}
+        {% for fm in form %}
+        <div class="form-group">
+            <label>{{fm.label_tag}}</label> {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small><br>
+        </div>
+        {% endfor %}
+        <a href="{% url 'reset-password' %}">forgot password?</a><br>
+        <input type="submit" class="btn" value="login"><br>
+        
+        {% if form.non_field_errors %}
+        {% for error in form.non_field_errors%}
+        <p class="alert">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+    </form>
+</div>
+
+{% endblock body %}

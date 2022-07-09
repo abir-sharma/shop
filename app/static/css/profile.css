@@ -1,0 +1,72 @@
+.container-profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.toggler {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.profile {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.profile form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid orange;
+    border-radius: 5px;
+    padding: 10px 10px 10px 10px;
+}
+.profile form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+.p-btn {
+    display: inline block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: black;
+    font-weight: 500;
+    background-color: orange;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+}
+.toggler a {
+    text-decoration: none;
+}
+.card-body {
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.address {
+    width: 50%;
+    margin-left: 400px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

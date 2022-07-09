@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Registration{% endblock title %}
+{% block body %}
+<div class="container">
+   <div class="register">
+      <div class="cross">
+         <h1><i class="bi bi-person-circle"></i></h1>
+         <a href="{% url 'home' %}"><i class="bi bi-x-lg "></i></a>
+      </div>
+<form action="" method="post" novalidate class="shadow p-5">
+   {% csrf_token %}
+   {% if messages %}
+   {% for message in messages%}
+   <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+   {% endfor %}
+   {% endif %}
+   {% for fm in form %}
+   <div class="mb-3">
+   <label>{{fm.label_tag}}</label> {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
+   </div>
+   {% endfor %}
+   <div class="text-end my-3">
+      <input type="submit" value="Submit" class="btn">
+   </div>
+   <br>
+</form>
+</div>
+</div>
+{% endblock body %}

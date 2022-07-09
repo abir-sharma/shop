@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% block title %}Checkout{% endblock title %}
+{% block body %}
+<div class="cart-orders">
+    <div class="items">
+        {% if op %}
+        {% for o in op %}
+        <div class="cart-item">
+            <img src="{{o.product.product_image.url}}" alt="">
+            <h1>{{o.product.title}}</h1>
+            <h4 class="p">
+
+                <label for="quantity">Quantity : </label>
+                <span id="quantity">{{o.quantity}}</span><br>
+                <label for="status">Status : </label>
+                <span class="status" id="status">{{o.status}}</span>
+                <div class="progress">
+                    <div id="pending"></div>
+                </div>
+            </h4>
+        </div>
+       
+        {% endfor %}
+        {% else %}
+        <h1 style=margin-bottom:70px ; >No orders yet !!!</h1>
+        {% endif %}
+    </div>
+</div>
+
+    {% endblock body %}

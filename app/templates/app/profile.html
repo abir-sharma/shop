@@ -1,0 +1,25 @@
+{% extends 'app/base.html' %}
+{% block title %}Profile{% endblock title %}
+{% block body %}
+<div class="container-profile">
+    <div class="tooggler">
+        <a href="{% url 'address' %}" class="p-btn" >Address</a>
+    </div>
+    <div class="profile">
+        <form action="" method="post" >
+            {% csrf_token %}
+            {% for fm in form %}
+            <div class="error">
+                {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small><br>
+            </div>
+            {% endfor %} 
+            <button type="submit"class="p-btn">Submit</button>
+        </form>
+        {% if messages %}
+            {% for message in messages%}
+            <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+            {% endfor %}
+            {% endif %}
+    </div>
+</div>
+{% endblock body %}

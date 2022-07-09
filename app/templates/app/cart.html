@@ -1,0 +1,54 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Cart{% endblock title %}
+{% block body %}
+<div class="cart">
+    <div class="items">
+        {% if carts %}
+        {% for cart in carts %}
+        <div class="cart-item">
+            <img src="{{cart.product.product_image.url}}" height="150" alt="">
+            <h1>{{cart.product.title}}</h1>
+            <h4>Price : {{cart.product.discounted_price}}</h4>
+            <h4>Total amount : {{amount}}</h4>
+            <h4>
+                 <a class="left-arrow minus-cart" pid="{{cart.product.id}}"><i class="bi bi-caret-left-square-fill"></i>
+                </a>
+                  <label for="quantity">Quantity : </label>
+                  <span id="quantity">{{cart.quantity}}</span> 
+                  <a class="right-arrow plus-cart" pid="{{cart.product.id}}"><i class="bi bi-caret-right-square-fill"></i>
+                </a>
+            </h4>
+            <button class="remove-cart btnn" pid="{{cart.product.id}}" >Remove Item</button>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h1>{{msg}}</h1>
+        {% endif %}
+    
+    </div>
+    <div class="summary">
+        <h1>Summary</h1>
+        <hr>
+        {% if totalItems %}
+        <h2 id="lenght">Toal Items : {{totalItems}}</h2>
+        {% else %}
+        <h2 id="lenght">Toal Items : 0</h2>
+        {% endif %}
+
+        <h4>Delivery charges : 70</h4>
+        <hr>
+        {% if totalamount %}
+        <h2 id="totalamount">Total Amount : {{totalamount}}</h2>
+        {% else %}
+        <h2 id="totalamount">Total Amount : 0</h2>
+        {% endif %}
+        <div class="btnn">
+            <span class="btnn"><a href="">Empty Cart</a></span>
+            <span class="btnn"><a href="{% url 'checkout' %}">Checkout</a></span>
+        </div>
+        
+        
+    </div>
+</div>
+{% endblock body%}

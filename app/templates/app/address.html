@@ -1,0 +1,23 @@
+{% extends 'app/base.html' %}
+{% block title %}Address{% endblock title %}
+{% block body %}
+            <div class="address">
+                <a href="{% url 'profile' %}" class="p-btn" >Profile</a>
+                {% for ad in add %}
+                <div class="address-card">
+                    <div class="card-card">
+                     <div class="card-bodyyy">
+                      <h3>Address 1</h3>
+                      <p>Name: {{ad.name}}</p>
+                      <p>Locality: {{ad.locality}}</p>
+                      <p>City: {{ad.city}}</p>
+                      <p>State: {{ad.state}}</p>
+                      <p>Pin Code: {{ad.zipcode}}</p>
+                     </div>
+                    </div>
+                   </div>
+                {% endfor %}
+            </div>
+    </div>
+</div>
+{% endblock body %}

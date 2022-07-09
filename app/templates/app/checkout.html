@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+{% block title %}Checkout{% endblock title %}
+{% block body %}
+<div class="address">
+  <h1>Select Address for Delivery </h1>
+  <form action="{% url 'done' %}">
+  {% for ad in add %}
+  <div class="address-card">
+      <div class="card-card">
+        <input class="form-check-input" type="radio" name="custid" id="custadd{{forloop.counter}}" value="{{ad.id}}">
+          <label class="form-check-label fw-bold" for="custadd{{forloop.counter}}">
+            Address: {{forloop.counter}} </label>
+       <div class="card-bodyy">
+        <h3>Address 1</h3>
+        <p>Name: {{ad.name}}</p>
+        <p>Locality: {{ad.locality}}</p>
+        <p>City: {{ad.city}}</p>
+        <p>State: {{ad.state}}</p>
+        <p>Pin Code: {{ad.zipcode}}</p>
+       </div>
+      </div>
+     </div>
+     
+  {% endfor %}
+  <button class="confirm">Confirm</button>
+    </form>
+</div>
+
+{% endblock body %}
